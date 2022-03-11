@@ -19,7 +19,8 @@ pub async fn new_weather(info: web::Json<NewWeather>, pool: web::Data<DbPool>) -
         .expect("Can't get db connection from pool...");
 
     let new_weather = NewWeather {
-        temperature: info.temperature,
+        temperature_c: info.temperature_c,
+        temperature_f: info.temperature_f,
         humidity: info.humidity,
         pressure: info.pressure,
         date: info.date,
